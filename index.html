@@ -49,18 +49,119 @@
           <h3>Things we will try to cover today</h3>
           <p>Installing Git</p>
           <p>Creating a repository</p>
-          <p>Saving files to local and remote repositories</p>
-          <p>Changing files</p>
-          <p>Reversing file changes</p>
-          <p>Creating Branches</p>
-          <p>Merging branches</p>
-          <p>Deleting branches</p>
-          <p>Navigating File Changes</p>
+          <p>Making commits</p>
+          <p>Pushing commits local and remote repositories</p>
+          <p>Reversing commits</p>
+          <p>Branching</p>
+          <p>Navigating commits</p>
+        </section>
+
+        <section>
+          <section>
+            <p>Installing Git</p>
+          </section>
+          <section>
+            <p>Installing Git</p>
+          </section>
+          <section>
+            <p>Installing Git</p>
+          </section>
+          <section>
+            <p>Installing Git</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <p>Creating a repository</p>
+          </section>
+
+          <section>
+            <p>First local, then remote</p>
+          </section>
+
+          <section>
+            <p>Go to your documents directory then create a new folder initialize a git repository in that folder.</p>
+            <pre>
+              <code>
+                cd ~/Documents
+                mkdir learngit
+                cd learngit
+                git init
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Now that you've created the repository let's add a file.</p>
+            <pre>
+              <code>
+                pwd
+                touch test.txt
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Let's set a remote repository.</p>
+            <pre>
+              <code>
+                git status
+                git remote add origin https://github.com/USERNAME/learngit
+              </code>
+            </pre>
+          </section>
+
+        <section>
+          <p>Set git username and email</p>
+          <pre>
+            <code>
+              git config --local user.name "USERNAME"
+              git config --local user.email "EMAIL"
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>Push initial commit to the remote repository</p>
+          <pre>
+            <code>
+              git push origin master
+              git config --local user.email "EMAIL"
+            </code>
+          </pre>
+          <span class="fragment fade-in">
+            <p class="fragment highlight-red">It didn't work!!!!</p>
+          </span>
+        </section>
+
+        <section>
+          <p>Go to github and make repository</p>
+        </section>
+
+        <section>
+          <p>Now push to the remote.</p>
+        </section>
+
+        </section>
+
+
+        <section>
+          <p>Installing Git</p>
         </section>
 
         <section>
           <p>Installing Git</p>
         </section>
+
+        <section>
+          <p>Installing Git</p>
+        </section>
+
+        <section>
+          <p>Installing Git</p>
+        </section>
+
 
 			</div>
 		</div>
@@ -78,7 +179,8 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+        history: true,
 			});
 		</script>
 	</body>
