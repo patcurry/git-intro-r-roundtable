@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Git Basics</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,12 +24,14 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+      <!-- Slide 0 -->
 				<section>
           <p>Intro to Git</p>
           <p>Pat Curry</p>
           <p>2017-08-24</p>
         </section>
 
+      <!-- Slide 1 -->
 				<section>
 				  <section>
             <p>What is Git?</p>
@@ -41,10 +43,12 @@
           </section>
         </section>
 
+      <!-- Slide 2 -->
         <section>
           <p>Git is not easy, even though every tutorial out there says that it is.</p>
         </section>
 
+      <!-- Slide 3 -->
         <section>
           <h3>Things we will try to cover today</h3>
           <p>Installing Git</p>
@@ -56,6 +60,7 @@
           <p>Navigating commits</p>
         </section>
 
+      <!-- Slide 4 -->
         <section>
           <section>
             <p>Installing Git</p>
@@ -71,6 +76,7 @@
           </section>
         </section>
 
+      <!-- Slide 5 -->
         <section>
           <section>
             <p>Creating a repository</p>
@@ -87,6 +93,8 @@
                 cd ~/Documents
                 mkdir learngit
                 cd learngit
+                mkdir firstrepo
+                cd firstrepo
                 git init
               </code>
             </pre>
@@ -122,46 +130,114 @@
           </pre>
         </section>
 
+          <section>
+            <p>Push initial commit to the remote repository</p>
+            <pre>
+              <code>
+                git push origin master
+              </code>
+            </pre>
+            <span class="fragment fade-in">
+              <p class="fragment highlight-red">It didn't work!!!!</p>
+            </span>
+          </section>
+
+          <section>
+            <p>Go to github and make repository</p>
+          </section>
+
+          <section>
+            <p>Now push to the remote.</p>
+          </section>
+
+          <section>
+            <p>On to the next section</p>
+          </section>
+
+        </section>
+
+
+      <!-- Slide 6 -->
         <section>
-          <p>Push initial commit to the remote repository</p>
-          <pre>
-            <code>
-              git push origin master
-              git config --local user.email "EMAIL"
-            </code>
-          </pre>
-          <span class="fragment fade-in">
-            <p class="fragment highlight-red">It didn't work!!!!</p>
-          </span>
+
+          <section>
+            <p>Cloning a repository</p>
+          </section>
+
+          <section>
+            <p>Go to repo you want to clone and find the 'clone or download' button.</p>
+            <p>Select 'Clone with HTTPS' and copy the URL</p>
+          </section>
+
+          <section>
+            <p>Open your terminal and find a good spot for a new folder, and clone the repository.</p>
+            <pre>
+              <code>
+                git clone https://github.com/patcurry/rroundtable-git-clone-practice.git 
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Now you have a local version of the repository.</p>
+            <p>Let's take a look at the commit log</p>
+            <pre>
+              <code>
+                git log
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Let make this easier to look at</p>
+            <pre>
+              <code>
+                git log --oneline --all
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Graphical</p>
+            <pre>
+              <code>
+                git log --oneline --all --graph
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>More info</p>
+            <pre>
+              <code>
+                git log --oneline --all --graph --decorate
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Even More info</p>
+            <pre>
+              <code>
+                git log --all --graph --decorate
+              </code>
+            </pre>
+          </section>
+
+
         </section>
 
         <section>
-          <p>Go to github and make repository</p>
+          <p>Modify files in repository</p>
         </section>
 
         <section>
-          <p>Now push to the remote.</p>
-        </section>
-
-        </section>
-
-
-        <section>
-          <p>Installing Git</p>
+          <p>Commit changes</p>
         </section>
 
         <section>
-          <p>Installing Git</p>
+          <p>Resources</p>
         </section>
-
-        <section>
-          <p>Installing Git</p>
-        </section>
-
-        <section>
-          <p>Installing Git</p>
-        </section>
-
 
 			</div>
 		</div>
