@@ -53,9 +53,9 @@
           <h3>Things we will try to cover today</h3>
           <p>Installing Git</p>
           <p>Creating a repository</p>
+          <p>Cloning a repository</p>
           <p>Making commits</p>
           <p>Pushing commits local and remote repositories</p>
-          <p>Reversing commits</p>
           <p>Branching</p>
           <p>Navigating commits</p>
         </section>
@@ -223,20 +223,167 @@
               </code>
             </pre>
           </section>
-
-
         </section>
+
+      <!-- Slide 7 -->
+        <section>
+
+          <section>
+            <p>Modify files in repository</p>
+          </section>
+
+          <section>
+            <p>Go back to your own repository</p>
+            <pre>
+              <code>
+                cd ../learngit 
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Modify test.txt</p>
+            <pre>
+              <code>
+                open test.txt
+              </code>
+            </pre>
+            <p>Save test.txt</p>
+          </section>
+
+          <section>
+            <p>Check the git status</p>
+            <pre>
+              <code>
+                git status 
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Add test.txt to the set of files to be committed</p>
+            <pre>
+              <code>
+                git add test.txt
+              </code>
+            </pre>
+            <p>Check the status again with git status</p>
+          </section>
+
+          <section>
+            <p>Make a commit</p>
+            <p>the -m flag is a message that will go along with the commit</p>
+            <pre>
+              <code>
+                git commit -m 'I am great! Also, test.txt has been modified'
+              </code>
+            </pre>
+            <p>Check the status again with git status</p>
+          </section>
+
+          <section>
+            <p>Check the git log again</p>
+            <pre>
+              <code>
+                git log
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Push the changes to the origin</p>
+            <pre>
+              <code>
+                git push origin master
+              </code>
+            </pre>
+            <p>Check your github account to see the changes</p>
+          </section>
+        </section>
+
+      <!-- Slide 8 -->
 
         <section>
-          <p>Modify files in repository</p>
+          <section>
+            <p>Branching</p>
+          </section>
+
+          <section>
+            <p>Navigate back to the learngit folder</p>
+            <pre>
+              <code>
+                cd ../learngit
+                git status
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Make a Branch and check it out</p>
+            <pre>
+              <code>
+                git branch dev
+                git checkout dev
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Make a new file and commit the change</p>
+            <pre>
+              <code>
+                touch superduper.txt 
+                open superduper.txt 
+              </code>
+            </pre>
+
+            <p>Write something in the file and commit the change</p>
+            <pre>
+              <code>
+                git commit -m 'added superduper.txt'
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Look at the differences</p>
+            <pre>
+              <code>
+                git diff master..dev
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Merge the branches</p>
+            <pre>
+              <code>
+                git checkout master 
+                git merge dev
+                git status
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Push the branches to the remote repository</p>
+            <pre>
+              <code>
+                git push origin master
+                git push origin dev
+              </code>
+            </pre>
+          </section>
         </section>
 
-        <section>
-          <p>Commit changes</p>
-        </section>
-
+      <!-- Slide 9 -->
         <section>
           <p>Resources</p>
+          <p>https://git-scm.com/book/en/v2</p>
+          <p>https://www.atlassian.com/git/tutorials</p>
+          <p>http://learngitbranching.js.org/</p>
+          <p>https://try.github.io/levels/1/challenges/1</p>
+          <p>https://www.codecademy.com/learn/learn-git</p>
         </section>
 
 			</div>
