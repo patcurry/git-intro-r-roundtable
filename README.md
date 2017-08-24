@@ -5,24 +5,19 @@
 ## Table of contents
 - [What is Git?](#what-is-git)
 - [Git is not easy](#git-is-not-easy)
+- [Creating a repository](#creating-a-repository)
+- [Cloning a repository](#cloning-a-repository)
+- [Branching](#branching)
+- [Viewing the git log](#viewing-the-git-log)
+- [Set a remote repository](#set-a-remote-repository)
 
-- [Configuration](#configuration)
-- [Presentation Size](#presentation-size)
-- [Dependencies](#dependencies)
-- [Ready Event](#ready-event)
-- [Auto-sliding](#auto-sliding)
-- [Keyboard Bindings](#keyboard-bindings)
-- [Touch Navigation](#touch-navigation)
-- [Lazy Loading](#lazy-loading)
-- [API](#api)
-
-
+- [Resources](#resources)
+- [License](#license)
 
 ## What is Git
 Git is a version control system.
 It is a way to track changes in computer files.
 Git is also a way for multiple people to work on the same file or files at the same time.
-
 
 ### Git is not easy
 
@@ -34,7 +29,6 @@ Branching
 Navigating commits and branches
 Cloning a repository
 Pushing commits local and remote repositories
-
 
 Installing Git
 
@@ -55,7 +49,6 @@ Go through the process of installation
 On a windows computer be sure that you can use git bash.
 It would also be good to open a window to the git repository you are in.
 We will have to learn a bit of bash at the same time as learning git.
-
 
 ## Creating a repository
 Creating a repository and adding files to it
@@ -113,244 +106,137 @@ Check the status again with git status
 
 Go back into the learngit directory.
 
-                cd ~/Documents/learngit
-                pwd 
-              </code>
-            </pre>
-            You should see this
-            <pre>
-              <code>
-                /Users/USERNAME/Documents/learngit
-              </code>
-            </pre>
-          </section>
+```sh
+cd ~/Documents/learngit
+pwd 
+```
+You should see this
 
-          <section>
-            Now clone the git repository and cd into the repository
-            <pre>
-              <code>
-                git clone https://github.com/patcurry/rroundtable-git-clone-practice.git 
-                cd rroundtable-git-clone-practice
-              </code>
-            </pre>
-          </section>
+```sh
+/Users/USERNAME/Documents/learngit
+```
+
+Now clone the git repository and cd into the repository
+
+```sh
+git clone https://github.com/patcurry/rroundtable-git-clone-practice.git 
+cd rroundtable-git-clone-practice
+```
 
 ## Viewing the git log
-          <section>
-            Now you have a local version of the repository.
-            Let's take a look at the commit log
-            <pre>
-              <code>
-                git log
-              </code>
-            </pre>
-          </section>
+          
+Now you have a local version of the repository.
+Let's take a look at the commit log
 
-          <section>
-            Let make this easier to look at
-            <pre>
-              <code>
-                git log --oneline --all
-              </code>
-            </pre>
-          </section>
+```sh
+git log
+```
+          
+Let make this easier to look at
 
-          <section>
-            Graphical
-            <pre>
-              <code>
-                git log --oneline --all --graph
-              </code>
-            </pre>
-          </section>
+```sh
+git log --oneline --all
+```
 
-          <section>
-            More info
-            <pre>
-              <code>
-                git log --oneline --all --graph --decorate
-              </code>
-            </pre>
-          </section>
+Graphical
+```sh
+git log --oneline --all --graph
+```
+          
+More info
+```sh
+git log --oneline --all --graph --decorate
+```
+ 
+Even More info
+```sh
+git log --all --graph --decorate
+```
 
-          <section>
-            Even More info
-            <pre>
-              <code>
-                git log --all --graph --decorate
-              </code>
-            </pre>
-          </section>
-        </section>
+## Branching
+Navigate back to the firstrepo folder
+```sh
+cd ~/Documents/learngit/firstrepo
+git status
+```
 
-      <!-- Slide 7 -->
+Check the git branches
+```sh
+git branch
+```
+          
+Make a new Branch and check it out
+```sh
+git branch dev
+git branch
+git checkout dev
+```
 
+In the dev branch make a new file and commit the change
+```sh
+touch superduper.txt 
+git status
+```
 
+Write something in the file then check the status of the repository and commit the change
+```sh
+git status
+git add .
+git status
+git commit -m 'added superduper.txt'
+```
+          
+Look at the differences between the dev and the master branches
+```sh
+git diff master..dev
+```
 
-      <!-- Slide 8 -->
-        <section>
-          <section>
-            Branching
-          </section>
+Checkout the master branch and merge the branches
+```sh
+git checkout master 
+ls
+git merge dev
+git status
+```
+ 
+Take a look at the git log
+```sh
+git log --all --oneline --graph
+```
+          
+## Set a remote repository.
+Set up a github or gitlab account or just use the zmt gitlab instance.
+https://gitlab.leibniz-zmt.de/users/sign_in
+Check out your profile
+https://gitlab.leibniz-zmt.de/pcu
 
-          <section>
-            Navigate back to the firstrepo folder
-            <pre>
-              <code>
-                cd ~/Documents/learngit/firstrepo
-                git status
-              </code>
-            </pre>
-          </section>
+Let's set a remote repository.
+This can be done with github, gitlab, the zmt gitlab, or bitbucket, and probably more.
+Actually, you can set a remote repository on any server, or even your own computer.
+```sh
+git status
+git remote add origin https://gitlab.leibniz-zmt.de/USERNAME/firstrepo.git
+```
+          
+Set git username and email for your computer
+```sh
+git config --global user.name "USERNAME"
+git config --global user.email "EMAIL"
+```
 
-          <section>
-            Check the git branches
-            <pre>
-              <code>
-                git branch
-              </code>
-            </pre>
-          </section>
+Go to github/gitlab/bitbucket and make the repository!
+        
+Push initial commit to the remote repository
+```sh
+git push origin master
+```
+## Resources
 
-          <section>
-            Make a new Branch and check it out
-            <pre>
-              <code>
-                git branch dev
-                git branch
-                git checkout dev
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            In the dev branch make a new file and commit the change
-            <pre>
-              <code>
-                touch superduper.txt 
-                git status
-              </code>
-            </pre>
-
-            Write something in the file then check the status of the repository and commit the change
-            <pre>
-              <code>
-                git status
-                git add .
-                git status
-                git commit -m 'added superduper.txt'
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            Look at the differences between the dev and the master branches
-            <pre>
-              <code>
-                git diff master..dev
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            Checkout the master branch and merge the branches
-            <pre>
-              <code>
-                git checkout master 
-                ls
-                git merge dev
-                git status
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            Take a look at the git log
-            <pre>
-              <code>
-                git log --all --oneline --graph
-              </code>
-            </pre>
-          </section>
-
-        </section>
-
-<!-- This section needs to be moved to the bottom -->
-
-        <section>
-          <section>
-            Let's set a remote repository.
-          </section>
-
-          <section>
-            Set up a github or gitlab account or just use the zmt gitlab instance.
-            https://gitlab.leibniz-zmt.de/users/sign_in
-            Check out your profile
-            https://gitlab.leibniz-zmt.de/pcu
-
-          </section>
-
-          <section>
-            Let's set a remote repository.
-            This can be done with github, gitlab, the zmt gitlab, or bitbucket, and probably more.
-            Actually, you can set a remote repository on any server, or even your own computer.
-            <pre>
-              <code>
-                git status
-                git remote add origin https://gitlab.leibniz-zmt.de/USERNAME/firstrepo.git
-              </code>
-            </pre>
-          </section>
-
-        <section>
-          Set git username and email for your computer
-          <pre>
-            <code>
-              git config --global user.name "USERNAME"
-              git config --global user.email "EMAIL"
-            </code>
-          </pre>
-        </section>
-
-          <section>
-            Push initial commit to the remote repository
-            <pre>
-              <code>
-                git push origin master
-              </code>
-            </pre>
-            <span class="fragment fade-in">
-              <p class="fragment highlight-red">It didn't work!!!!
-            </span>
-          </section>
-
-          <section>
-            Go to github/gitlab/bitbucket and make the repository
-          </section>
-
-          <section>
-            Now push to the remote.
-          </section>
-
-          <section>
-            That's all I'm going to teach you today.
-          </section>
-
-        </section>
-
-      <!-- Slide 9 -->
-        <section>
-          Resources
-          https://git-scm.com/book/en/v2
-          https://www.atlassian.com/git/tutorials
-          http://learngitbranching.js.org/
-          https://try.github.io/levels/1/challenges/1
-          https://www.codecademy.com/learn/learn-git
-        </section>
-
-
-
-
+https://git-scm.com/book/en/v2
+https://www.atlassian.com/git/tutorials
+http://learngitbranching.js.org/
+https://try.github.io/levels/1/challenges/1
+https://www.codecademy.com/learn/learn-git
 
 ## License
 
