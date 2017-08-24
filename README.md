@@ -2,6 +2,8 @@
 # Pat Curry
 # 2017-08-24
 
+howdy partners
+
 ## Table of contents
 - [What is Git?](#what-is-git)
 - [Git is not easy](#git-is-not-easy)
