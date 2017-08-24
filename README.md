@@ -233,9 +233,13 @@ git push origin master
 ## Resources
 
 https://git-scm.com/book/en/v2
+
 https://www.atlassian.com/git/tutorials
+
 http://learngitbranching.js.org/
+
 https://try.github.io/levels/1/challenges/1
+
 https://www.codecademy.com/learn/learn-git
 
 ## License
