@@ -217,6 +217,20 @@ Actually, you can set a remote repository on any server, or even your own comput
 git status
 git remote add origin https://gitlab.leibniz-zmt.de/USERNAME/firstrepo.git
 ```
+or
+
+```sh
+git status
+git remote add origin https://gitlab.com/USERNAME/firstrepo.git
+```
+
+or
+
+```sh
+git status
+git remote add origin https://github.com/USERNAME/firstrepo.git
+```
+ 
           
 Set git username and email for your computer
 ```sh
