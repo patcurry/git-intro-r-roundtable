@@ -53,41 +53,58 @@
           <h3>Things we will try to cover today</h3>
           <p>Installing Git</p>
           <p>Creating a repository</p>
-          <p>Cloning a repository</p>
           <p>Making commits</p>
-          <p>Pushing commits local and remote repositories</p>
           <p>Branching</p>
-          <p>Navigating commits</p>
+          <p>Navigating commits and branches</p>
+          <p>Cloning a repository</p>
+          <p>Pushing commits local and remote repositories</p>
         </section>
 
       <!-- Slide 4 -->
+      <!--
+        Installing Git
+        Linux
+        Mac
+        Windows
+       -->
         <section>
           <section>
             <p>Installing Git</p>
           </section>
           <section>
-            <p>Installing Git</p>
+            <p>Linux</p>
+            <p>https://git-scm.com/download/linux</p>
+            <pre>
+              <code>
+                sudo apt-get install git-all
+              </code>
+            </pre>
+            <p>Mac</p>
+            <p>https://git-scm.com/download/mac</p>
+            <p>Windows</p>
+            <p>https://git-scm.com/download/win</p>
           </section>
           <section>
-            <p>Installing Git</p>
+            <p>Go through the process of installation</p>
           </section>
           <section>
-            <p>Installing Git</p>
+            <p>On a windows computer be sure that you can use git bash.</p>
+            <p>It would also be good to open a window to the git repository you are in.</p>
+            <p>We will have to learn a bit of bash at the same time as learning git.</p>
           </section>
         </section>
 
       <!-- Slide 5 -->
+      <!--
+        Creating a repository
+       -->
         <section>
           <section>
-            <p>Creating a repository</p>
+            <p>Creating a repository and adding files to it</p>
           </section>
 
           <section>
-            <p>First local, then remote</p>
-          </section>
-
-          <section>
-            <p>Go to your documents directory then create a new folder initialize a git repository in that folder.</p>
+            <p>With Git Bash go to your documents directory then create a new folder initialize a git repository in that folder.</p>
             <pre>
               <code>
                 cd ~/Documents
@@ -102,78 +119,86 @@
 
           <section>
             <p>Now that you've created the repository let's add a file.</p>
+            <p>Use pwd to check that you are in the correct directory.</p>
+            <p>Use git status to check the status of your repository.</p>
+            <p>Use touch to create a file.</p>
             <pre>
               <code>
                 pwd
-                touch test.txt
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            <p>Let's set a remote repository.</p>
-            <pre>
-              <code>
                 git status
-                git remote add origin https://github.com/USERNAME/learngit
+                touch test.txt
+                git status
               </code>
             </pre>
           </section>
 
-        <section>
-          <p>Set git username and email</p>
-          <pre>
-            <code>
-              git config --local user.name "USERNAME"
-              git config --local user.email "EMAIL"
-            </code>
-          </pre>
-        </section>
+          <section>
+            <p>Modify test.txt</p>
+            <p>Open test.txt with a text editor (not microsoft word)</p>
+            <p>Save test.txt</p>
+          </section>
 
           <section>
-            <p>Push initial commit to the remote repository</p>
+            <p>Check the git status</p>
             <pre>
               <code>
-                git push origin master
+                git status 
               </code>
             </pre>
-            <span class="fragment fade-in">
-              <p class="fragment highlight-red">It didn't work!!!!</p>
-            </span>
           </section>
 
           <section>
-            <p>Go to github and make repository</p>
+            <p>Add test.txt to the set of files to be committed</p>
+            <pre>
+              <code>
+                git add test.txt
+              </code>
+            </pre>
+            <p>Check the status again with git status</p>
           </section>
 
           <section>
-            <p>Now push to the remote.</p>
-          </section>
-
-          <section>
-            <p>On to the next section</p>
+            <p>Make a commit</p>
+            <p>the "-m" flag is a message that will go along with the commit</p>
+            <pre>
+              <code>
+                git commit -m 'test.txt has been modified'
+              </code>
+            </pre>
+            <p>Check the status again with git status</p>
           </section>
 
         </section>
-
 
       <!-- Slide 6 -->
         <section>
 
           <section>
-            <p>Cloning a repository</p>
+            <p>Cloning a repository and viewing the git log</p>
           </section>
 
           <section>
-            <p>Go to repo you want to clone and find the 'clone or download' button.</p>
-            <p>Select 'Clone with HTTPS' and copy the URL</p>
+            <p>Go back into the learngit directory.</p>
+            <pre>
+              <code>
+                cd ~/Documents/learngit
+                pwd 
+              </code>
+            </pre>
+            <p>You should see this</p>
+            <pre>
+              <code>
+                /Users/USERNAME/Documents/learngit
+              </code>
+            </pre>
           </section>
 
           <section>
-            <p>Open your terminal and find a good spot for a new folder, and clone the repository.</p>
+            <p>Now clone the git repository and cd into the repository</p>
             <pre>
               <code>
                 git clone https://github.com/patcurry/rroundtable-git-clone-practice.git 
+                cd rroundtable-git-clone-practice
               </code>
             </pre>
           </section>
@@ -226,127 +251,67 @@
         </section>
 
       <!-- Slide 7 -->
-        <section>
 
-          <section>
-            <p>Modify files in repository</p>
-          </section>
 
-          <section>
-            <p>Go back to your own repository</p>
-            <pre>
-              <code>
-                cd ../learngit 
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            <p>Modify test.txt</p>
-            <pre>
-              <code>
-                open test.txt
-              </code>
-            </pre>
-            <p>Save test.txt</p>
-          </section>
-
-          <section>
-            <p>Check the git status</p>
-            <pre>
-              <code>
-                git status 
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            <p>Add test.txt to the set of files to be committed</p>
-            <pre>
-              <code>
-                git add test.txt
-              </code>
-            </pre>
-            <p>Check the status again with git status</p>
-          </section>
-
-          <section>
-            <p>Make a commit</p>
-            <p>the -m flag is a message that will go along with the commit</p>
-            <pre>
-              <code>
-                git commit -m 'I am great! Also, test.txt has been modified'
-              </code>
-            </pre>
-            <p>Check the status again with git status</p>
-          </section>
-
-          <section>
-            <p>Check the git log again</p>
-            <pre>
-              <code>
-                git log
-              </code>
-            </pre>
-          </section>
-
-          <section>
-            <p>Push the changes to the origin</p>
-            <pre>
-              <code>
-                git push origin master
-              </code>
-            </pre>
-            <p>Check your github account to see the changes</p>
-          </section>
-        </section>
 
       <!-- Slide 8 -->
-
         <section>
           <section>
             <p>Branching</p>
           </section>
 
           <section>
-            <p>Navigate back to the learngit folder</p>
+            <p>Navigate back to the firstrepo folder</p>
             <pre>
               <code>
-                cd ../learngit
+                cd ~/Documents/learngit/firstrepo
                 git status
               </code>
             </pre>
           </section>
 
           <section>
-            <p>Make a Branch and check it out</p>
+            <p>Check the git branches</p>
+            <pre>
+              <code>
+                git branch
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <p>Make a new Branch and check it out</p>
             <pre>
               <code>
                 git branch dev
+                git branch
                 git checkout dev
               </code>
             </pre>
           </section>
 
           <section>
-            <p>Make a new file and commit the change</p>
+            <p>In the dev branch make a new file and commit the change</p>
             <pre>
               <code>
                 touch superduper.txt 
-                open superduper.txt 
+                git status
               </code>
             </pre>
 
-            <p>Write something in the file and commit the change</p>
+            <p>Write something in the file then check the status of the repository and commit the change</p>
             <pre>
               <code>
+                git status
+                git add .
+                git status
                 git commit -m 'added superduper.txt'
               </code>
             </pre>
           </section>
 
           <section>
-            <p>Look at the differences</p>
+            <p>Look at the differences between the dev and the master branches</p>
             <pre>
               <code>
                 git diff master..dev
@@ -355,10 +320,11 @@
           </section>
 
           <section>
-            <p>Merge the branches</p>
+            <p>Checkout the master branch and merge the branches</p>
             <pre>
               <code>
                 git checkout master 
+                ls
                 git merge dev
                 git status
               </code>
@@ -366,14 +332,77 @@
           </section>
 
           <section>
-            <p>Push the branches to the remote repository</p>
+            <p>Take a look at the git log</p>
             <pre>
               <code>
-                git push origin master
-                git push origin dev
+                git log --all --oneline --graph
               </code>
             </pre>
           </section>
+
+        </section>
+
+<!-- This section needs to be moved to the bottom -->
+
+        <section>
+          <section>
+            <p>Let's set a remote repository.</p>
+          </section>
+
+          <section>
+            <p>Set up a github or gitlab account or just use the zmt gitlab instance.</p>
+            <p>https://gitlab.leibniz-zmt.de/users/sign_in</p>
+            <p>Check out your profile</p>
+            <p>https://gitlab.leibniz-zmt.de/pcu</p>
+
+          </section>
+
+          <section>
+            <p>Let's set a remote repository.</p>
+            <p>This can be done with github, gitlab, the zmt gitlab, or bitbucket, and probably more.</p>
+            <p>Actually, you can set a remote repository on any server, or even your own computer.</p>
+            <pre>
+              <code>
+                git status
+                git remote add origin https://gitlab.leibniz-zmt.de/USERNAME/firstrepo.git
+              </code>
+            </pre>
+          </section>
+
+        <section>
+          <p>Set git username and email for your computer</p>
+          <pre>
+            <code>
+              git config --global user.name "USERNAME"
+              git config --global user.email "EMAIL"
+            </code>
+          </pre>
+        </section>
+
+          <section>
+            <p>Push initial commit to the remote repository</p>
+            <pre>
+              <code>
+                git push origin master
+              </code>
+            </pre>
+            <span class="fragment fade-in">
+              <p class="fragment highlight-red">It didn't work!!!!</p>
+            </span>
+          </section>
+
+          <section>
+            <p>Go to github/gitlab/bitbucket and make the repository</p>
+          </section>
+
+          <section>
+            <p>Now push to the remote.</p>
+          </section>
+
+          <section>
+            <p>That's all I'm going to teach you today.</p>
+          </section>
+
         </section>
 
       <!-- Slide 9 -->
